@@ -8,11 +8,18 @@
 
 function reverse(str) {
     string = '';
-    for (var i = str.lenght - 1; i >= 0; i--) {
+    for (let i = str.length - 1; i>= 0; i--) {
         string += str[i];
-        console.log(str[i] + '----')
     }
     return string;
 }
+
+// function reverse(str) {
+//     string = '';
+//     for (let char in str) {
+//         string = char + string;
+//     }
+//     return string;
+// }
 
 module.exports = reverse;
