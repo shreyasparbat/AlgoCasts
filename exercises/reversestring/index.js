@@ -8,10 +8,9 @@
 
 function reverse(str) {
     string = '';
-    console.log(str)
-    for (var i = str.lenght - 1; i>= 0; i--) {
+    for (var i = str.lenght - 1; i >= 0; i--) {
         string += str[i];
-        console.log(str[i])
+        console.log(str[i] + '----')
     }
     return string;
 }
