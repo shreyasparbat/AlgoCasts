@@ -6,11 +6,10 @@
 // maxChar("apple 1231111") === "1"
 
 function maxChar(str) {
-    chars = str.split('')
-    let maxChar = chars[0]
+    let maxChar
     let maxCount = 0
     let record = {}
-    chars.forEach(char => {
+    for (let char of str) {
         console.log(char)
         if (char in record) {
             record[char] += 1
@@ -21,7 +20,7 @@ function maxChar(str) {
             maxCount = record[char]
             maxChar = char
         }
-    })
+    }
     return maxChar
 }
 
