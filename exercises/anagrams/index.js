@@ -10,31 +10,36 @@
 
 function anagrams(stringA, stringB) {
     let regex = /[^A-Za-z0-9]/g
-    stringA = stringA.replace(regex, '').toLowerCase()
-    stringB = stringB.replace(regex, '').toLowerCase()
-    // missed edge case!!! Always think of these!
-    if (stringA.length !== stringB.length) {
-        return false
-    }
-    let mapA = {}
-    for (let char of stringA) {
-        mapA[char] = char in mapA ? mapA[char] + 1 : 1
-    }
-    let flag = false
-    let mapB = {}
-    for (let char of stringB) {
-        freqA = mapA[char]
-        if (!(freqA)) {
-            return false
-        } else {
-            mapB[char] = char in mapB ? mapB[char] + 1 : 1
-            flag = freqA === mapB[char] ? true : false
-            console.log(mapB[char])
-        }
-    }
-    return flag
+    stringA = stringA.replace(regex, '').toLowerCase().split('').sort().join()
+    stringB = stringB.replace(regex, '').toLowerCase().split('').sort().join()
+    return stringA === stringB
 }
 
-console.log(anagrams('helllo', 'hello'))
-
 module.exports = anagrams;
+
+
+// function anagrams(stringA, stringB) {
+//     let regex = /[^A-Za-z0-9]/g
+//     stringA = stringA.replace(regex, '').toLowerCase()
+//     stringB = stringB.replace(regex, '').toLowerCase()
+//     // missed edge case!!! Always think of these!
+//     if (stringA.length !== stringB.length) {
+//         return false
+//     }
+//     let mapA = {}
+//     for (let char of stringA) {
+//         mapA[char] = char in mapA ? mapA[char] + 1 : 1
+//     }
+//     let flag = false
+//     let mapB = {}
+//     for (let char of stringB) {
+//         freqA = mapA[char]
+//         if (!(freqA)) {
+//             return false
+//         } else {
+//             mapB[char] = char in mapB ? mapB[char] + 1 : 1
+//             flag = freqA === mapB[char]
+//         }
+//     }
+//     return flag
+// }
