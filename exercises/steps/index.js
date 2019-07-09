@@ -17,6 +17,13 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+
+function stepsRecursive(n, i = 1, total = n) {
+    if (n === 0) {
+        return 'done'
+    }
+    console.log('#'.repeat(i) + ' '.repeat(total - i))
+    return steps(n - 1, i + 1, total)
+}
 
 module.exports = steps;
