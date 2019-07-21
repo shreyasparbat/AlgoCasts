@@ -15,8 +15,8 @@
 
 // Slow is moving at half the pace, and hence must reach the midpoint
 function midpoint(list) {
-    let slow = list.head
-    let fast = list.head
+    let slow = list.getFirst()
+    let fast = list.getFirst()
     while (fast.next) {
         fast = fast.next.next
         if (!(fast)) {
