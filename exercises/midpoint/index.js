@@ -12,6 +12,19 @@
 //   l.insertLast('c')
 //   midpoint(l); // returns { data: 'b' }
 
-function midpoint(list) {}
+
+// Slow is moving at half the pace, and hence must reach the midpoint
+function midpoint(list) {
+    let slow = list.head
+    let fast = list.head
+    while (fast.next) {
+        fast = fast.next.next
+        if (!(fast)) {
+            return slow
+        }
+        slow = slow.next
+    }
+    return slow
+}
 
 module.exports = midpoint;
